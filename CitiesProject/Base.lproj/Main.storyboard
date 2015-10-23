@@ -134,11 +134,35 @@
                                 <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                                 <animations/>
                             </mapView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6PK-rW-dQz">
+                                <rect key="frame" x="7" y="87" width="46" height="30"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="46" id="sDp-ds-iNL"/>
+                                </constraints>
+                                <state key="normal" title="+"/>
+                                <connections>
+                                    <action selector="click_bt_zoomIn:" destination="OuP-vs-9xN" eventType="touchUpInside" id="ulR-A7-BfQ"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zph-Jf-I3Y">
+                                <rect key="frame" x="7" y="141" width="46" height="30"/>
+                                <animations/>
+                                <state key="normal" title="-"/>
+                                <connections>
+                                    <action selector="click_bt_zoomOut:" destination="OuP-vs-9xN" eventType="touchUpInside" id="Dlg-WR-dIf"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" red="0.26077120180000002" green="0.9324325068" blue="1" alpha="0.59999999999999998" colorSpace="calibratedRGB"/>
                         <constraints>
+                            <constraint firstItem="6PK-rW-dQz" firstAttribute="top" secondItem="LXX-ov-7WL" secondAttribute="bottom" constant="23" id="9aR-9i-lFa"/>
+                            <constraint firstItem="Zph-Jf-I3Y" firstAttribute="leading" secondItem="6PK-rW-dQz" secondAttribute="leading" id="INO-cv-9Z8"/>
+                            <constraint firstItem="Zph-Jf-I3Y" firstAttribute="trailing" secondItem="6PK-rW-dQz" secondAttribute="trailing" id="aTb-bU-3rE"/>
+                            <constraint firstItem="6PK-rW-dQz" firstAttribute="leading" secondItem="I9T-ep-Ptz" secondAttribute="leadingMargin" constant="-9" id="aYw-FZ-RvC"/>
                             <constraint firstAttribute="trailing" secondItem="T2G-KB-ZL9" secondAttribute="trailing" id="hZ1-Cp-Q19"/>
+                            <constraint firstItem="Zph-Jf-I3Y" firstAttribute="top" secondItem="6PK-rW-dQz" secondAttribute="bottom" constant="24" id="kcP-wb-QCQ"/>
                             <constraint firstItem="T2G-KB-ZL9" firstAttribute="bottom" secondItem="kDg-LU-oJa" secondAttribute="top" id="kcc-Ns-gAo"/>
                             <constraint firstItem="T2G-KB-ZL9" firstAttribute="top" secondItem="LXX-ov-7WL" secondAttribute="bottom" id="s69-fU-wVd"/>
                             <constraint firstItem="T2G-KB-ZL9" firstAttribute="leading" secondItem="I9T-ep-Ptz" secondAttribute="leading" id="xI5-S4-5KM"/>

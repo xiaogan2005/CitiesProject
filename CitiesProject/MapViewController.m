@@ -53,34 +53,64 @@
     
     _mapView_1.showsUserLocation=YES;
     
+    //show point in map
+    
+    MKPointAnnotation *point=[[MKPointAnnotation alloc]init];
+    point.coordinate=CLLocationCoordinate2DMake([_obj.lat floatValue], [_obj.lng floatValue]);//
+    // NSLog(@"lag %@, lng %@", _obj.lat,_obj.str_lng);
+    NSLog(@"%@",[point description]);
+    point.title=_obj.name;
+    point.subtitle=_obj.wikipedia;
+    [self.mapView_1 addAnnotation:point];
+    
+    
+    
+    //zoom and center
+    MKCoordinateRegion region=MKCoordinateRegionMakeWithDistance(point.coordinate, 3000, 3000);
+    [self.mapView_1 setRegion:[_mapView_1 regionThatFits:region]animated:YES];
 }
 
+#pragma mark zoom a map using button
 
-
--(void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray<CLLocation *> *)locations{
-    CLLocation *location=locations.lastObject;
-    //@.6f float with 6 digit after zero
-    NSLog(@"lat value is %.6f, lng value is %.6f",location.coordinate.latitude,location.coordinate.longitude);
-    
-    
-    
-    //region should not be pointer, dont know why
-    
-    //control  center and zoom for phone location
-  
-   
-    
-        //// show point in map
-        MKPointAnnotation *point=[[MKPointAnnotation alloc]init];
-        point.coordinate=CLLocationCoordinate2DMake([_obj.lat floatValue], [_obj.lng floatValue]);//
-       // NSLog(@"lag %@, lng %@", _obj.lat,_obj.str_lng);
-        NSLog(@"%@",[point description]);
-        point.title=_obj.name;
-        point.subtitle=_obj.wikipedia;
-        [self.mapView_1 addAnnotation:point];
-        MKCoordinateRegion region=MKCoordinateRegionMakeWithDistance(point.coordinate, 3000, 3000);
-        [self.mapView_1 setRegion:[_mapView_1 regionThatFits:region]animated:YES];
+- (IBAction)click_bt_zoomIn:(id)sender {
+    [self  zoomMap:_mapView_1 byDelta:0.5];
 }
+- (IBAction)click_bt_zoomOut:(id)sender {
+    [self  zoomMap:_mapView_1 byDelta:2.0];
+}
+
+// delta is the zoom factor
+// 2 will zoom out x2
+// .5 will zoom in by x2
+- (void)zoomMap:(MKMapView*)mapView byDelta:(float) delta {
+    
+    MKCoordinateRegion region = mapView.region;
+    MKCoordinateSpan span = mapView.region.span;
+    span.latitudeDelta*=delta;
+    span.longitudeDelta*=delta;
+    region.span=span;
+    [mapView setRegion:region animated:YES];
+    
+}
+
+//static version dont need this
+//# pragma  mark will update all the time.
+//-(void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray<CLLocation *> *)locations{
+//    CLLocation *location=locations.lastObject;
+//    //@.6f float with 6 digit after zero
+//    NSLog(@"lat value is %.6f, lng value is %.6f",location.coordinate.latitude,location.coordinate.longitude);
+//    
+//    
+//    
+//    //region should not be pointer, dont know why
+//    
+//    //control  center and zoom for phone location
+//  
+//   
+//    
+//    
+//    
+//}
 
 
 
