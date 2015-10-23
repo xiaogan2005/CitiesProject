@@ -7,12 +7,13 @@
 //
 
 #import "MapViewController.h"
-
+#import "WebViewController.h"
 @interface MapViewController ()<MKMapViewDelegate, CLLocationManagerDelegate>
 @property (weak, nonatomic) IBOutlet MKMapView *mapView_1;
 @property (nonatomic, strong) CLGeocoder *geocoder;
 @property (nonatomic, strong) MKPlacemark *placemark;
 @property  (nonatomic, strong)CLLocationManager *CLLManager_1;
+@property  (nonatomic, strong)MKPointAnnotation *point;
 @end
 
 @implementation MapViewController
@@ -57,21 +58,36 @@
     
     //show point in map
     
-    MKPointAnnotation *point=[[MKPointAnnotation alloc]init];
-    point.coordinate=CLLocationCoordinate2DMake([_obj.lat floatValue], [_obj.lng floatValue]);//
+    _point=[[MKPointAnnotation alloc]init];
+    _point.coordinate=CLLocationCoordinate2DMake([_obj.lat floatValue], [_obj.lng floatValue]);//
     // NSLog(@"lag %@, lng %@", _obj.lat,_obj.str_lng);
-    NSLog(@"%@",[point description]);
-    point.title=_obj.name;
-    point.subtitle=_obj.wikipedia;
-    [self.mapView_1 addAnnotation:point];
+    NSLog(@"%@",[_point description]);
+    _point.title=_obj.name;
+    _point.subtitle=_obj.wikipedia;
+    [self.mapView_1 addAnnotation:_point];
     
     
     
     //zoom and center
-    MKCoordinateRegion region=MKCoordinateRegionMakeWithDistance(point.coordinate, 3000, 3000);
+    MKCoordinateRegion region=MKCoordinateRegionMakeWithDistance(_point.coordinate, 3000, 3000);
     [self.mapView_1 setRegion:[_mapView_1 regionThatFits:region]animated:YES];
+    
+    //for adding the circle(overlay)
+    MKCircle *circle = [MKCircle circleWithCenterCoordinate:_point.coordinate radius:2000];
+    [_mapView_1 addOverlay:circle];
+    
+
+
+
 }
 
+-(MKOverlayView *)mapView:(MKMapView *)mapView viewForOverlay:(id<MKOverlay>)overlay{
+    MKCircleView *circleView =[[MKCircleView alloc]initWithOverlay:overlay];
+    circleView.strokeColor = [UIColor greenColor];
+    circleView.fillColor = [[UIColor redColor]colorWithAlphaComponent:0.4];
+    return circleView;
+    
+}
 #pragma mark zoom a map using button
 
 - (IBAction)click_bt_zoomIn:(id)sender {
@@ -144,7 +160,26 @@
         
         
     }
+    //annotation popout
+    annotationview.rightCalloutAccessoryView = [UIButton buttonWithType:UIButtonTypeDetailDisclosure];
+    annotationview.canShowCallout = YES;
     return annotationview;
+}
+
+
+
+
+//Then callout method
+- (void)mapView:(MKMapView *)mapView annotationView:(MKAnnotationView *)view calloutAccessoryControlTapped:(UIControl *)control
+{   
+    
+    
+    
+    WebViewController *viewController = [self.storyboard instantiateViewControllerWithIdentifier:@"MyIdentifier"];
+    viewController.url=_obj.wikipedia;
+   
+    [self.navigationController pushViewController:viewController animated:YES];
+    
 }
 
 -(UIColor *)randomColor{

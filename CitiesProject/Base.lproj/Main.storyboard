@@ -175,7 +175,36 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Gf-5G-yfb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1609" y="363"/>
+            <point key="canvasLocation" x="1556" y="369"/>
+        </scene>
+        <!--Web View Controller-->
+        <scene sceneID="y5J-4s-xq5">
+            <objects>
+                <viewController storyboardIdentifier="MyIdentifier" id="2iZ-kG-eJ8" customClass="WebViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="JVQ-YB-tLR"/>
+                        <viewControllerLayoutGuide type="bottom" id="xfN-Na-8rM"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="OPC-d2-MBs">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <webView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="GjH-zI-lML">
+                                <rect key="frame" x="0.0" y="28" width="320" height="501"/>
+                                <animations/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </webView>
+                        </subviews>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <outlet property="webView_1" destination="GjH-zI-lML" id="77W-bK-wUW"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="QnH-GF-osd" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1971" y="369"/>
         </scene>
         <!--Table View Controller-->
         <scene sceneID="Anf-AA-s12">

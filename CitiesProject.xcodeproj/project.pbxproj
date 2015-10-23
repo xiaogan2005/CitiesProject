@@ -16,6 +16,7 @@
 		6579E6A91BD93AB200298C52 /* CitiesProjectTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6579E6A81BD93AB200298C52 /* CitiesProjectTests.m */; };
 		6579E6B41BD93AB200298C52 /* CitiesProjectUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6579E6B31BD93AB200298C52 /* CitiesProjectUITests.m */; };
 		6579E6C31BD93E8B00298C52 /* TableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6579E6C21BD93E8B00298C52 /* TableViewController.m */; settings = {ASSET_TAGS = (); }; };
+		658E190B1BDABAD9001A9445 /* WebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 658E190A1BDABAD9001A9445 /* WebViewController.m */; settings = {ASSET_TAGS = (); }; };
 		65CEBF451BD93EFD00269063 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 65CEBF441BD93EFD00269063 /* DetailViewController.m */; settings = {ASSET_TAGS = (); }; };
 		65CEBF481BD93F1000269063 /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 65CEBF471BD93F1000269063 /* MapViewController.m */; settings = {ASSET_TAGS = (); }; };
 		65CEBF4A1BD93F1F00269063 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65CEBF491BD93F1F00269063 /* MapKit.framework */; };
@@ -59,6 +60,8 @@
 		6579E6B51BD93AB200298C52 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6579E6C11BD93E8B00298C52 /* TableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableViewController.h; sourceTree = "<group>"; };
 		6579E6C21BD93E8B00298C52 /* TableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableViewController.m; sourceTree = "<group>"; };
+		658E19091BDABAD9001A9445 /* WebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebViewController.h; sourceTree = "<group>"; };
+		658E190A1BDABAD9001A9445 /* WebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebViewController.m; sourceTree = "<group>"; };
 		65CEBF431BD93EFD00269063 /* DetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
 		65CEBF441BD93EFD00269063 /* DetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
 		65CEBF461BD93F1000269063 /* MapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapViewController.h; sourceTree = "<group>"; };
@@ -126,6 +129,8 @@
 				6579E6941BD93AB200298C52 /* ViewController.h */,
 				6579E6951BD93AB200298C52 /* ViewController.m */,
 				6579E6971BD93AB200298C52 /* Main.storyboard */,
+				658E19091BDABAD9001A9445 /* WebViewController.h */,
+				658E190A1BDABAD9001A9445 /* WebViewController.m */,
 				65CEBF4D1BD9410E00269063 /* jsonObject.h */,
 				65CEBF4E1BD9410E00269063 /* jsonObject.m */,
 				65CEBF431BD93EFD00269063 /* DetailViewController.h */,
@@ -304,6 +309,7 @@
 				65CEBF451BD93EFD00269063 /* DetailViewController.m in Sources */,
 				6579E6961BD93AB200298C52 /* ViewController.m in Sources */,
 				6579E6931BD93AB200298C52 /* AppDelegate.m in Sources */,
+				658E190B1BDABAD9001A9445 /* WebViewController.m in Sources */,
 				65CEBF481BD93F1000269063 /* MapViewController.m in Sources */,
 				6579E6901BD93AB200298C52 /* main.m in Sources */,
 				6579E6C31BD93E8B00298C52 /* TableViewController.m in Sources */,
