@@ -22,6 +22,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
     _arr_objs=[[NSMutableArray alloc]init];
+    self.navigationItem.title=@"Get locations";
      [self webServiceCall];
     
 }

@@ -21,6 +21,8 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     [self mapInit];
+    
+    self.navigationItem.title=@"Map View";
     [_CLLManager_1 startUpdatingLocation];
 }
 

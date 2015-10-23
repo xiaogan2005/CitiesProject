@@ -22,6 +22,7 @@
     // Do any additional setup after loading the view.
     _lb_cityName.text=_obj.name;
     NSMutableString *str=[[NSMutableString alloc]init];
+    self.navigationItem.title=@"Detail";
 
     [str appendString:[NSString stringWithFormat:@"name = %@ \r",_obj.name]];
     [str appendString:[NSString stringWithFormat:@"lattitude= %@ \r",_obj.lat]];
